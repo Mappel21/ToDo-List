@@ -15,6 +15,9 @@ export function Home() {
 				placeholder="What needs to be done?"
 				onChange={e => setTodo(e.todo.value)}
 				/>
+			<button onClick={() => setList([...list, todo])} className="btn btn-success m-2">
+				Add
+			</button>
 		</div>
 	);
 }
