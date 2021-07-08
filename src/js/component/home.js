@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 //create your first component
 export function Home() {
-
 	const [list, setList] = useState([]);
 	const [todo, setTodo] = useState("");
 
@@ -13,11 +12,19 @@ export function Home() {
 				value={todo}
 				className="input"
 				placeholder="What needs to be done?"
-				onChange={e => setTodo(e.todo.value)}
-				/>
-			<button onClick={() => setList([...list, todo])} className="btn btn-success m-2">
+				onChange={e => setTodo(e.target.value)}
+			/>
+			<button
+				onClick={() => {
+					setList([...list, todo]);
+					setTodo("");
+				}}
+				className="btn btn-success m-2">
 				Add
 			</button>
+			{list.map((item, index) => (
+				<div key={index}>{item}</div>
+			))}
 		</div>
 	);
 }
