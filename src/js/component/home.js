@@ -23,7 +23,15 @@ export function Home() {
 				Add
 			</button>
 			{list.map((item, index) => (
-				<div key={index}>{item}</div>
+				<div key={index}>
+					{item}
+					<button
+						onClick={() =>
+							setList(list.filter(word => word !== item))
+						}>
+						x
+					</button>
+				</div>
 			))}
 		</div>
 	);
