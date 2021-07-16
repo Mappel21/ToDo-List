@@ -33,6 +33,7 @@ export function Home() {
 					</button>
 				</div>
 			))}
+			<footer>{list.length + " items left"}</footer>
 		</div>
 	);
 }
